@@ -1,0 +1,374 @@
+<html>
+<head>
+<title>Listas dependientes</title>
+
+</head>
+<script language="javascript">
+//Basado en un script de Vanessa M. Jaén Prado
+//
+//Este script y otros muchos pueden
+//descarse on-line de forma gratuita
+//en El Código: www.elcodigo.net
+
+//numero de listas
+var numListas = 3
+
+//datos listas
+// Lista raiz
+//	musica, deportes
+// Lista categorias
+//	musica: clasica, pop
+//	deportes: futbol, baloncesto
+// Lista subcategorias:
+//	musica - clasica: Mozart, Vivaldi 
+//	musica - pop: Madonna, Beatles
+//	deportes - futbol: Maradona, Pelé
+//	deportes - baloncesto: Johnson, Jordan
+
+raiz = new Array()
+//categorias
+AZUAY = new Array()
+ELORO = new Array()
+//subcategorias
+CUENCA=new Array()
+GIRON=new Array()
+GUALACEO=new Array()
+NABON=new Array()
+PAUTE=new Array()
+PUCARA=new Array()
+SANFERNANDO=new Array()
+SANTAISABEL=new Array()
+SIGSIG=new Array()
+ONHA=new Array()
+CHORDELEG=new Array()
+ELPAN=new Array()
+SEVILLADEORO=new Array()
+GUACHAPALA=new Array()
+CAMILOPONCEENRIQUEZ=new Array()
+MACHALA=new Array()
+ARENILLAS=new Array()
+ATAHUALPA=new Array()
+BALSAS=new Array()
+CHILLA=new Array()
+ELGUABO=new Array()
+HUAQUILLAS=new Array()
+MARCABELI=new Array()
+PASAJE=new Array()
+PINHAS=new Array()
+PORTOVELO=new Array()
+SANTAROSA=new Array()
+ZARUMA=new Array()
+LASLAJAS=new Array()
+//datos subcategorias (nombre mostrado, valor)
+CUENCA[0] = new elementoHijo( "Bellavista", "0" )
+CUENCA[1] = new elementoHijo( "Cañaribamba", "1" )
+CUENCA[2] = new elementoHijo( "El Batán", "2" )
+CUENCA[3] = new elementoHijo( "El Sagrario", "3" )
+CUENCA[4] = new elementoHijo( "El Vecino", "4" )
+CUENCA[5] = new elementoHijo( "Gil Ramírez Dávalos", "5" )
+CUENCA[6] = new elementoHijo( "Huaynacápac", "6" )
+CUENCA[7] = new elementoHijo( "Machángara", "7" )
+CUENCA[8] = new elementoHijo( "Monay", "8" )
+CUENCA[9] = new elementoHijo( "San Blas", "9" )
+CUENCA[10] = new elementoHijo( "San Sebastián", "10" )
+CUENCA[11] = new elementoHijo( "Sucre", "11" )
+CUENCA[12] = new elementoHijo( "Totoracocha", "12" )
+CUENCA[13] = new elementoHijo( "Yanuncay", "13" )
+CUENCA[14] = new elementoHijo( "Hermano Miguel", "14" )
+CUENCA[15] = new elementoHijo( "Cuenca", "15" )
+CUENCA[16] = new elementoHijo( "Baños", "16" )
+CUENCA[17] = new elementoHijo( "Cumbe", "17" )
+CUENCA[18] = new elementoHijo( "Chaucha", "18" )
+CUENCA[19] = new elementoHijo( "Checa (Jidcay)", "19" )
+CUENCA[20] = new elementoHijo( "Chiquintad", "20" )
+CUENCA[21] = new elementoHijo( "Llacao", "21" )
+CUENCA[22] = new elementoHijo( "Molleturo", "22" )
+CUENCA[23] = new elementoHijo( "Nulti", "23" )
+CUENCA[24] = new elementoHijo( "Octavio Cordero Palacios (Santa Rosa)", "24" )
+CUENCA[25] = new elementoHijo( "Paccha", "25" )
+CUENCA[26] = new elementoHijo( "Quingeo", "26" )
+CUENCA[27] = new elementoHijo( "Ricaurte", "27" )
+CUENCA[28] = new elementoHijo( "San Joaquín", "28" )
+CUENCA[29] = new elementoHijo( "Santa Ana", "29" )
+CUENCA[30] = new elementoHijo( "Sayausí", "30" )
+CUENCA[31] = new elementoHijo( "Sidcay", "31" )
+CUENCA[32] = new elementoHijo( "Sinincay", "32" )
+CUENCA[33] = new elementoHijo( "Tarqui", "33" )
+CUENCA[34] = new elementoHijo( "Turi", "34" )
+CUENCA[35] = new elementoHijo( "Valle", "35" )
+CUENCA[36] = new elementoHijo( "Victoria Del Portete (Irquis)", "36" )
+GIRON[0] = new elementoHijo( "Girón", "37" )
+GIRON[1] = new elementoHijo( "Asunción", "38" )
+GIRON[2] = new elementoHijo( "San Gerardo", "39" )
+GUALACEO[0] = new elementoHijo( "Gualaceo", "40" )
+GUALACEO[1] = new elementoHijo( "Chordeleg", "41" )
+GUALACEO[2] = new elementoHijo( "Daniel Córdova Toral (El Oriente)", "42" )
+GUALACEO[3] = new elementoHijo( "Jadán", "43" )
+GUALACEO[4] = new elementoHijo( "Mariano Moreno", "44" )
+GUALACEO[5] = new elementoHijo( "Principal", "45" )
+GUALACEO[6] = new elementoHijo( "Remigio Crespo Toral (Gúlag)", "46" )
+GUALACEO[7] = new elementoHijo( "San Juan", "47" )
+GUALACEO[8] = new elementoHijo( "Zhidmad", "48" )
+GUALACEO[9] = new elementoHijo( "Luis Cordero Vega", "49" )
+GUALACEO[10] = new elementoHijo( "Simón Bolívar", "50" )
+NABON[0] = new elementoHijo( "Nabón", "51" )
+NABON[1] = new elementoHijo( "Cochapata", "52" )
+NABON[2] = new elementoHijo( "El Progreso", "53" )
+NABON[3] = new elementoHijo( "Las Nieves (Chaya)", "54" )
+NABON[4] = new elementoHijo( "Oña", "55" )
+PAUTE[0] = new elementoHijo( "Paute", "56" )
+PAUTE[1] = new elementoHijo( "Amaluza", "57" )
+PAUTE[2] = new elementoHijo( "Bulán (José Víctor Izquierdo)", "58" )
+PAUTE[3] = new elementoHijo( "Chicán (Guillermo Ortega)", "59" )
+PAUTE[4] = new elementoHijo( "El Cabo", "60" )
+PAUTE[5] = new elementoHijo( "Guachapala", "61" )
+PAUTE[6] = new elementoHijo( "Guarainag", "62" )
+PAUTE[7] = new elementoHijo( "Palmas", "63" )
+PAUTE[8] = new elementoHijo( "Pan", "64" )
+PAUTE[9] = new elementoHijo( "San Cristóbal (Carlos Ordóñez Lazo)", "65" )
+PAUTE[10] = new elementoHijo( "Sevilla de Oro", "66" )
+PAUTE[11] = new elementoHijo( "Tomebamba", "67" )
+PAUTE[12] = new elementoHijo( "Dug Dug", "68" )
+PUCARA[0] = new elementoHijo( "Pucará", "69" )
+PUCARA[1] = new elementoHijo( "Camilo Ponce Enríquez", "70" )
+PUCARA[2] = new elementoHijo( "San Rafael de Sharug", "71" )
+SANFERNANDO[0] = new elementoHijo( "San Fernando", "72" )
+SANFERNANDO[1] = new elementoHijo( "Chumblín", "73" )
+SANTAISABEL[0] = new elementoHijo( "Santa Isabel (Chaguarurco)", "74" )
+SANTAISABEL[1] = new elementoHijo( "Abdón Calderón (La Unión)", "75" )
+SANTAISABEL[2] = new elementoHijo( "El Carmen de Pijilí", "76" )
+SANTAISABEL[3] = new elementoHijo( "Zhaglli (Shaglli)", "77" )
+SANTAISABEL[4] = new elementoHijo( "San Salvador de Cañaribamba", "78" )
+SIGSIG[0] = new elementoHijo( "Sigsig", "79" )
+SIGSIG[1] = new elementoHijo( "Cuchil (Cutchil)", "80" )
+SIGSIG[2] = new elementoHijo( "Gima", "81" )
+SIGSIG[3] = new elementoHijo( "Guel", "82" )
+SIGSIG[4] = new elementoHijo( "Ludo", "83" )
+SIGSIG[5] = new elementoHijo( "San Bartolomé", "84" )
+SIGSIG[6] = new elementoHijo( "San José de Raranga", "85" )
+ONHA[0] = new elementoHijo( "San Felipe de Oña", "86" )
+ONHA[1] = new elementoHijo( "Susudel", "87" )
+CHORDELEG[0] = new elementoHijo( "Chordeleg", "88" )
+CHORDELEG[1] = new elementoHijo( "Principal", "89" )
+CHORDELEG[2] = new elementoHijo( "La Unión", "90" )
+CHORDELEG[3] = new elementoHijo( "Luis Galarza Orellana", "91" )
+CHORDELEG[4] = new elementoHijo( "San Martín de Puzhio", "92" )
+ELPAN[0] = new elementoHijo( "El Pan", "93" )
+ELPAN[1] = new elementoHijo( "Amaluza", "94" )
+ELPAN[2] = new elementoHijo( "Palmas", "95" )
+ELPAN[3] = new elementoHijo( "San Vicente", "96" )
+SEVILLADEORO[0] = new elementoHijo( "Sevilla de Oro", "97" )
+SEVILLADEORO[1] = new elementoHijo( "Amaluza", "98" )
+SEVILLADEORO[2] = new elementoHijo( "Palmas", "99" )
+GUACHAPALA[0] = new elementoHijo( "Guachapala", "100" )
+CAMILOPONCEENRIQUEZ[0] = new elementoHijo( "Camilo Ponce Enríquez", "101" )
+CAMILOPONCEENRIQUEZ[1] = new elementoHijo( "El Carmen de Pijilí", "102" )
+MACHALA[0] = new elementoHijo( "La Providencia", "103" )
+MACHALA[1] = new elementoHijo( "Machala", "104" )
+MACHALA[2] = new elementoHijo( "Puerto Bolívar", "105" )
+MACHALA[3] = new elementoHijo( "Nueve de Mayo", "106" )
+MACHALA[4] = new elementoHijo( "El Cambio", "107" )
+MACHALA[5] = new elementoHijo( "Machala", "108" )
+MACHALA[6] = new elementoHijo( "El Cambio", "109" )
+MACHALA[7] = new elementoHijo( "El Retiro", "110" )
+ARENILLAS[0] = new elementoHijo( "Arenillas", "111" )
+ARENILLAS[1] = new elementoHijo( "Chacras", "112" )
+ARENILLAS[2] = new elementoHijo( "La Libertad", "113" )
+ARENILLAS[3] = new elementoHijo( "Las Lajas", "114" )
+ARENILLAS[4] = new elementoHijo( "Palmales", "115" )
+ARENILLAS[5] = new elementoHijo( "Carcabón", "116" )
+ATAHUALPA[0] = new elementoHijo( "Paccha", "117" )
+ATAHUALPA[1] = new elementoHijo( "Ayapamba", "118" )
+ATAHUALPA[2] = new elementoHijo( "Cordoncillo", "119" )
+ATAHUALPA[3] = new elementoHijo( "Milagro", "120" )
+ATAHUALPA[4] = new elementoHijo( "San José", "121" )
+ATAHUALPA[5] = new elementoHijo( "San Juan de Cerro Azul", "122" )
+BALSAS[0] = new elementoHijo( "Balsas", "123" )
+BALSAS[1] = new elementoHijo( "Bellamaría", "124" )
+CHILLA[0] = new elementoHijo( "Chilla", "125" )
+ELGUABO[0] = new elementoHijo( "El Guabo", "126" )
+ELGUABO[1] = new elementoHijo( "Barbones", "127" )
+ELGUABO[2] = new elementoHijo( "La Iberia", "128" )
+ELGUABO[3] = new elementoHijo( "Tendales", "129" )
+ELGUABO[4] = new elementoHijo( "Río Bonito", "130" )
+HUAQUILLAS[0] = new elementoHijo( "Ecuador", "131" )
+HUAQUILLAS[1] = new elementoHijo( "El Paraíso", "132" )
+HUAQUILLAS[2] = new elementoHijo( "Hualtaco", "133" )
+HUAQUILLAS[3] = new elementoHijo( "Milton Reyes", "134" )
+HUAQUILLAS[4] = new elementoHijo( "Unión Lojana", "135" )
+HUAQUILLAS[5] = new elementoHijo( "Huaquillas", "136" )
+MARCABELI[0] = new elementoHijo( "Marcabelí", "137" )
+MARCABELI[1] = new elementoHijo( "El Ingenio", "138" )
+PASAJE[0] = new elementoHijo( "Bolívar", "139" )
+PASAJE[1] = new elementoHijo( "Loma de Franco", "140" )
+PASAJE[2] = new elementoHijo( "Ochoa León", "141" )
+PASAJE[3] = new elementoHijo( "Tres Cerritos", "142" )
+PASAJE[4] = new elementoHijo( "Pasaje", "143" )
+PASAJE[5] = new elementoHijo( "Buenavista", "144" )
+PASAJE[6] = new elementoHijo( "Casacay", "145" )
+PASAJE[7] = new elementoHijo( "La Peaña", "146" )
+PASAJE[8] = new elementoHijo( "Progreso", "147" )
+PASAJE[9] = new elementoHijo( "Uzhcurrumi", "148" )
+PASAJE[10] = new elementoHijo( "Cañaquemada", "149" )
+PINHAS[0] = new elementoHijo( "La Matriz", "150" )
+PINHAS[1] = new elementoHijo( "La Susaya", "151" )
+PINHAS[2] = new elementoHijo( "Piñas Grande", "152" )
+PINHAS[3] = new elementoHijo( "Piñas", "153" )
+PINHAS[4] = new elementoHijo( "Capiro (Cab. En La Capilla de Capiro)", "154" )
+PINHAS[5] = new elementoHijo( "La Bocana", "155" )
+PINHAS[6] = new elementoHijo( "Moromoro (Cab. En El Vado)", "156" )
+PINHAS[7] = new elementoHijo( "Piedras", "157" )
+PINHAS[8] = new elementoHijo( "San Roque (Ambrosio Maldonado)", "158" )
+PINHAS[9] = new elementoHijo( "Saracay", "159" )
+PORTOVELO[0] = new elementoHijo( "Portovelo", "160" )
+PORTOVELO[1] = new elementoHijo( "Curtincapa", "161" )
+PORTOVELO[2] = new elementoHijo( "Morales", "162" )
+PORTOVELO[3] = new elementoHijo( "Salatí", "163" )
+SANTAROSA[0] = new elementoHijo( "Santa Rosa", "164" )
+SANTAROSA[1] = new elementoHijo( "Puerto Jelí", "165" )
+SANTAROSA[2] = new elementoHijo( "Balneario Jambelí (Satélite)", "166" )
+SANTAROSA[3] = new elementoHijo( "Jumón (Satélite)", "167" )
+SANTAROSA[4] = new elementoHijo( "Nuevo Santa Rosa", "168" )
+SANTAROSA[5] = new elementoHijo( "Santa Rosa", "169" )
+SANTAROSA[6] = new elementoHijo( "Bellavista", "170" )
+SANTAROSA[7] = new elementoHijo( "Jambelí", "171" )
+SANTAROSA[8] = new elementoHijo( "La Avanzada", "172" )
+SANTAROSA[9] = new elementoHijo( "San Antonio", "173" )
+SANTAROSA[10] = new elementoHijo( "Torata", "174" )
+SANTAROSA[11] = new elementoHijo( "Victoria", "175" )
+SANTAROSA[12] = new elementoHijo( "Bellamaría", "176" )
+ZARUMA[0] = new elementoHijo( "Zaruma", "177" )
+ZARUMA[1] = new elementoHijo( "Abañín", "178" )
+ZARUMA[2] = new elementoHijo( "Arcapamba", "179" )
+ZARUMA[3] = new elementoHijo( "Guanazán", "180" )
+ZARUMA[4] = new elementoHijo( "Guizhaguiña", "181" )
+ZARUMA[5] = new elementoHijo( "Huertas", "182" )
+ZARUMA[6] = new elementoHijo( "Malvas", "183" )
+ZARUMA[7] = new elementoHijo( "Muluncay Grande", "184" )
+ZARUMA[8] = new elementoHijo( "Sinsao", "185" )
+ZARUMA[9] = new elementoHijo( "Salvias", "186" )
+LASLAJAS[0] = new elementoHijo( "La Victoria", "187" )
+LASLAJAS[1] = new elementoHijo( "Platanillos", "188" )
+LASLAJAS[2] = new elementoHijo( "Valle Hermoso", "189" )
+LASLAJAS[3] = new elementoHijo( "La Victoria", "190" )
+LASLAJAS[4] = new elementoHijo( "La Libertad", "191" )
+LASLAJAS[5] = new elementoHijo( "El Paraíso", "192" )
+LASLAJAS[6] = new elementoHijo( "San Isidro", "193" )
+
+//datos categorias (nombre mostrado, valor, array de datos subcategoria)
+AZUAY[0] = new elementoPadre( "Cuenca","0",CUENCA )
+AZUAY[1] = new elementoPadre( "Girón","1",GIRON )
+AZUAY[2] = new elementoPadre( "Gualaceo","2",GUALACEO )
+AZUAY[3] = new elementoPadre( "Nabón","3",NABON )
+AZUAY[4] = new elementoPadre( "Paute","4",PAUTE )
+AZUAY[5] = new elementoPadre( "Pucara","5",PUCARA )
+AZUAY[6] = new elementoPadre( "San Fernando","6",SANFERNANDO )
+AZUAY[7] = new elementoPadre( "Santa Isabel","7",SANTAISABEL )
+AZUAY[8] = new elementoPadre( "Sigsig","8",SIGSIG )
+AZUAY[9] = new elementoPadre( "Oña","9",ONHA )
+AZUAY[10] = new elementoPadre( "Chordeleg","10",CHORDELEG )
+AZUAY[11] = new elementoPadre( "El Pan","11",ELPAN )
+AZUAY[12] = new elementoPadre( "Sevilla de Oro","12",SEVILLADEORO )
+AZUAY[13] = new elementoPadre( "Guachapala","13",GUACHAPALA )
+AZUAY[14] = new elementoPadre( "Camilo Ponce Enríquez","14",CAMILOPONCEENRIQUEZ )
+ELORO[15] = new elementoPadre( "Machala","15",MACHALA )
+ELORO[16] = new elementoPadre( "Arenillas","16",ARENILLAS )
+ELORO[17] = new elementoPadre( "Atahualpa","17",ATAHUALPA )
+ELORO[18] = new elementoPadre( "Balsas","18",BALSAS )
+ELORO[19] = new elementoPadre( "Chilla","19",CHILLA )
+ELORO[20] = new elementoPadre( "El Guabo","20",ELGUABO )
+ELORO[21] = new elementoPadre( "Huaquillas","21",HUAQUILLAS )
+ELORO[22] = new elementoPadre( "Marcabelí","22",MARCABELI )
+ELORO[23] = new elementoPadre( "Pasaje","23",PASAJE )
+ELORO[24] = new elementoPadre( "Piñas","24",PINHAS )
+ELORO[25] = new elementoPadre( "Portovelo","25",PORTOVELO )
+ELORO[26] = new elementoPadre( "Santa Rosa","26",SANTAROSA )
+ELORO[27] = new elementoPadre( "Zaruma","27",ZARUMA )
+ELORO[28] = new elementoPadre( "Las Lajas","28",LASLAJAS )
+ELORO[0] = new elementoPadre( "Machala","15",MACHALA )
+ELORO[1] = new elementoPadre( "Arenillas","16",ARENILLAS )
+ELORO[2] = new elementoPadre( "Atahualpa","17",ATAHUALPA )
+ELORO[3] = new elementoPadre( "Balsas","18",BALSAS )
+ELORO[4] = new elementoPadre( "Chilla","19",CHILLA )
+ELORO[5] = new elementoPadre( "El Guabo","20",ELGUABO )
+ELORO[6] = new elementoPadre( "Huaquillas","21",HUAQUILLAS )
+ELORO[7] = new elementoPadre( "Marcabelí","22",MARCABELI )
+ELORO[8] = new elementoPadre( "Pasaje","23",PASAJE )
+ELORO[9] = new elementoPadre( "Piñas","24",PINHAS )
+ELORO[10] = new elementoPadre( "Portovelo","25",PORTOVELO )
+ELORO[11] = new elementoPadre( "Santa Rosa","26",SANTAROSA )
+ELORO[12] = new elementoPadre( "Zaruma","27",ZARUMA )
+ELORO[13] = new elementoPadre( "Las Lajas","28",LASLAJAS )
+//datos raiz (nombre mostrado, valor, array de datos subcategoria)
+raiz[0] = new elementoPadre( "Azuay", "0", AZUAY )
+raiz[1] = new elementoPadre( "El Oro", "1", ELORO )
+//compone la lista dependiente a partir del valor de la opcion escogida en la lista padre
+function ComponerLista( listaPadre, listaHija  ) {
+	
+	f = document.forms["formulario"]
+	
+	//borra listas hijas
+	for ( x = listaHija; x < numListas; x++)
+		BorrarLista( f.elements[x] )
+	
+	//array de datos a copiar en la lista hija
+	datosHija = raiz
+	for ( x = 0; x < listaHija; x++)
+		datosHija = datosHija[ f.elements[x].selectedIndex ].datos
+	
+	for ( x = 0; x < datosHija.length; x++) {
+		// añade elementos a lista hija
+                var opcion = new Option( datosHija[x].nombre, datosHija[x].valor )
+                f.elements[listaHija].options[x] = opcion
+	}
+}
+
+//borra la lista
+function BorrarLista( lista ) {
+        lista.length = 0
+}
+
+//estructura de datos para el elemento padre
+function elementoPadre ( nombre, valor, datos ) {
+        this.nombre = nombre
+        this.valor = valor
+        this.datos = datos
+}
+
+//estructura de datos para el elemento hijo
+function elementoHijo ( nombre, valor ) {
+        this.nombre = nombre
+        this.valor = valor
+}
+
+</script>
+</b>
+<body>
+
+</p>
+
+<form name="formulario">
+  PROVINCIA: <br>
+  <!-- Lista 0 -->
+  <select name="listaHobbies" onChange="ComponerLista(0, 1)">
+  <option>Azuay</option>
+  <option>El Oro</option>
+  </select>
+  <br>
+  CANTON: <br>
+  <!-- Lista 1 -->
+  <select name="listaCategorias" OnChange="ComponerLista( 1, 2 )">
+  <option>Seleccione...</option>
+  <option>Escoga la Provinca</option>
+  </select>
+  <br>
+  PARROQUIA<br>
+  <!-- Lista 2 --><select name="listaSubcategorias">
+  <option>Seleccione...</option>
+  <option>Escoga el Cantón</option>
+  </select> </p>
+</form>
+
+</body>
+
+</html>
